@@ -15,7 +15,7 @@ object ContextMap {
 }
 
 fun main(args: Array<String>) {
-    ContextMap.registerBean { SimpleService() } // not need to pass type explicitly, compare with SpringJava.java
     ContextMap.registerBean(SimpleService::class.java) { SimpleService() }
+    ContextMap.registerBean { SimpleService() } // not need to pass type explicitly, compare with SpringJava.java
 }
 

@@ -74,7 +74,11 @@ fun test() {
     Locker.lockInline(ReentrantLock(), ::execute2) // method reference
 }
 
-fun join(first: String, second: String, combiner: (String, String) -> String) { // function type
+typealias Combiner = (String, String) -> String
+
+typealias NameList = List<String>
+
+fun join(first: String, second: String, combiner: Combiner) { // function type
     combiner(first, second)
 }
 
